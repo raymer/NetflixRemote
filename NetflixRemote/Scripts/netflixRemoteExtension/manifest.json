@@ -1,0 +1,23 @@
+﻿{
+    "manifest_version": 2,
+
+    "name": "Netflix Remote",
+    "description": "This extension allows you to control Netflix running on a PC from another device on your intranet.",
+    "version": "1.0",
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "permissions": [
+    "activeTab",
+    "http://*/*", 
+    "https://*/*"
+  ],
+  "content_scripts": [
+  {
+    "matches": [
+      "http://www.netflix.com/*", "https://www.netflix.com/*"
+    ],
+    "js": ["jquery-1.7.1.min.js", "jquery.signalR-2.2.0.min.js", "myHubs.js", "content.js"]
+  }
+]
+}
